@@ -1,19 +1,49 @@
 <head>
   <title>CT0</title>
   <script src="//use.typekit.net/yim1zji.js"></script>
+  <script src="//use.typekit.net/yim1zji.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 </body>
 
 <template name="hello">
-  <section class="loading-section">
+  {{#if videoActive}} 
+	{{> video}}
+  {{/if}}
+  <section class="landing-section">
   	<div class="image-overlay"></div>
   	<h1 class="CT0-title">Counting to 1000</h1>
+  	<div class="newsletter-container">
+  		<form class="newsletter-form">
+			<input class="newsletter-signup" type="email" placeholder="Email">
+			<button class="newsletter-submit">Submit</button>
+		</form>
+		<h3 class="signup-message">Sign up to stay informed</h3>
+  	</div>
   	<div class="play-container">
 		<i class="fa fa-play-circle play-button"></i>
 		<h4 class="watch-trailer">Watch Trailer</h4>
+  	</div>
+
+  	<div class="social-container">
+  		<span class="social-icon">
+  			<a href="https://www.facebook.com/countingto1000" target="_blank">
+	  			<i class="fa fa-facebook"></i>
+  			</a>
+  		</span>
+  		<span class="social-icon">
+  			<a href="https://twitter.com/CTOfilm" target="_blank">
+	  			<i class="fa fa-twitter"></i>
+  			</a>
+  		</span>
+  		<!-- <span class="social-icon">
+	  		<a href="" target="_blank">
+	  			<i class="fa fa-instagram"></i>
+  			</a>
+  		</span> -->
   	</div>
   </section>
 </template>

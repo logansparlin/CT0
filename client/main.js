@@ -13,4 +13,35 @@ Template.hello.onRendered(function() {
   //   // });
   //   TweenLite.to(title, 0.9, {x: positionX, y: positionY, force3D: true, autoRound: false, ease: Quart.easeOut});
   // });
+  Session.set('videoActive', false)
 });
+
+Template.hello.events({
+  'submit .newsletter-form': function(e) {
+    e.preventDefault();
+    var email = $('.newsletter-signup').val();
+    Meteor.call('subscribeUser', email, function(result) {
+      if(true) {
+        console.log('it worked')
+        $('.signup-message').text('Thanks for signing up!')
+      } else {
+        console.log('it didn\'t work')
+        $('.signup-message').text('We\'re sorry, something went wrong!')
+      }
+    })
+  },
+  'click .play-container': function() {
+    Session.set('videoActive', true)
+  }
+});
+
+Template.hello.helpers({
+  videoActive: function() {
+    var active = Session.get('videoActive');
+    if(active) {
+      return true
+    } else {
+      return false
+    }
+  }
+})

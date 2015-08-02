@@ -1,0 +1,34 @@
+.video-container 
+	position absolute
+	width 100%
+	height 100%
+	top 0
+	left 0
+	z-index 20
+	background rgba(0, 0, 0, 0.95)
+	iframe 
+		width 100%
+		height 100%
+	.player .sidedock 
+		display none
+
+.close-icon 
+	width 30px 
+	height 30px 
+	position absolute 
+	top 25px
+	left 30px
+	z-index 21
+	cursor pointer
+	.bar 
+		display block
+		position absolute
+		width 100%
+		height 2px 
+		background white
+		top 50%
+		left 50%
+		&:first-of-type 
+			transform translate(-50%, -50%) rotate(45deg)
+		&:last-of-type 
+			transform translate(-50%, -50%) rotate(-45deg)
