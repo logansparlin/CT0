@@ -9,6 +9,7 @@ Meteor.methods({
 				if(err) {
 					console.log(err)
 				} else {
+					GAnalytics.event("newsletter","signup");
 					return true;
 				}
 			});

@@ -31,6 +31,7 @@ Template.hello.events({
     })
   },
   'click .play-container': function() {
+    GAnalytics.event("play","teaser");
     Session.set('videoActive', true)
   }
 });
